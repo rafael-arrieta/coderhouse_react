@@ -1,0 +1,106 @@
+.barrita{
+    background-color: rgb(34, 34, 34);
+    color: aliceblue;
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+
+.logo{
+    margin: 0;
+    width: 20%;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 10px 40px;
+}
+
+.navMenu{
+    width: 80%;
+    padding: auto;
+    display: flex;
+    align-items: center;
+    padding: 0 10px
+}
+
+.buscar{
+    background-color: white;
+    width: 50%;
+    height: 30px;
+    padding: 0 15px;
+    margin: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: none;
+    border-radius: 5px;
+}
+.btn{
+    background-image: url(btnBuscar.png);
+    background-color: white;
+    padding: 0;
+    border:none;
+    background-repeat:no-repeat;
+    cursor: pointer;
+    border: none;
+    height: 30px;;
+    width:30px;
+    margin: 0;
+    background-position:center;
+    
+}
+
+input{
+    border:none;
+    outline: none;
+    padding: 0 10px;
+}
+a{
+    margin: 0 15px ;
+}
+a:hover{
+    text-decoration: underline;
+    color: rgb(210, 220, 215);
+    cursor: pointer;
+}
+
+.carrito{
+    background-image: url(btn.png);
+    background-color: rgb(34, 34, 34);
+    background-repeat:no-repeat;
+    cursor: pointer;
+    border: none;
+    height: 40px;;
+    width:40px;
+    margin: 0 15px;
+    background-position:center;
+}
+
+.carrito:hover{
+    background-image: url(btnHover.png);
+    background-repeat:no-repeat;
+    cursor: pointer;
+    border: none;
+    height: 40px;
+    width:40px;
+    margin: 0 15px;
+    background-position:center;
+}
+
+.btnSing{
+    width: 80px;
+    height: 30px;
+    margin: 0 15px ;
+    background-color: rgb(70, 70, 70);
+    border: none;
+    padding: 5px 15px;
+    color: aliceblue;
+    font-size: medium;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btnSing:hover{
+    background-color: rgb(80, 80, 85);
+    border: none;
+}

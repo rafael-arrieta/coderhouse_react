@@ -1,4 +1,4 @@
-.barrita{
+.nav{
     background-color: rgb(34, 34, 34);
     color: aliceblue;
     display: flex;
@@ -12,21 +12,21 @@
     height: 20px;
     display: flex;
     align-items: center;
-    justify-content: start;
+    justify-content: flex-start;
     padding: 10px 40px;
 }
 
 .navMenu{
-    width: 80%;
-    padding: auto;
+    width: 40%;
     display: flex;
     align-items: center;
-    padding: 0 10px
+    justify-content: flex-end;
+    padding: 0 10vh
 }
 
 .buscar{
     background-color: white;
-    width: 50%;
+    width: 30%;
     height: 30px;
     padding: 0 15px;
     margin: 0 20px;
@@ -52,13 +52,16 @@
 }
 
 input{
+    width: 80%;
     border:none;
     outline: none;
-    padding: 0 10px;
+    padding: 0;
 }
+
 a{
     margin: 0 15px ;
 }
+
 a:hover{
     text-decoration: underline;
     color: rgb(210, 220, 215);
@@ -88,7 +91,7 @@ a:hover{
     background-position:center;
 }
 
-.btnSing{
+.btnSign{
     width: 80px;
     height: 30px;
     margin: 0 15px ;
@@ -96,11 +99,11 @@ a:hover{
     border: none;
     padding: 5px 15px;
     color: aliceblue;
-    font-size: medium;
+    font-size: 15px;
     border-radius: 5px;
     cursor: pointer;
 }
-.btnSing:hover{
+.btnSign:hover{
     background-color: rgb(80, 80, 85);
     border: none;
 }

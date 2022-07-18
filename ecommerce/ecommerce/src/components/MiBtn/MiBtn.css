@@ -1,0 +1,13 @@
+.hola{
+    background-color: red;
+}
+
+.hola:focus{
+    outline: none;
+    box-shadow: none;
+}
+
+.hola:active{
+    outline: none;
+    box-shadow: none;
+}

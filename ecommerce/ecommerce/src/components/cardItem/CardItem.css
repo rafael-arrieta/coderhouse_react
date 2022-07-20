@@ -1,0 +1,17 @@
+.card{
+    width: 24%;
+    height: 200px;
+    padding: 10px;
+    border: 1px solid rgb(161, 161, 161);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-image{
+    width: 90%;
+    height: 100px;
+    border: none ;
+    border-radius: 8px;
+}

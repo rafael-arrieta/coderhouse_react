@@ -1,0 +1,35 @@
+.contador-container{
+    width: 20%;
+    height: 80px;
+    padding: 10px 10px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+}
+
+.btn-contador{
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    outline: none;
+    border: 1px solid rgb(196, 196, 196);
+    font-family:Arial;
+	font-size:17px;
+	padding:0;
+	text-decoration:none;
+}
+
+.btn-contador:hover{
+    background-color: rgb(240, 240, 240);
+}
+
+.text-contador{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 30px;
+}

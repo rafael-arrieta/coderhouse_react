@@ -1,24 +1,31 @@
 .contador-container{
-    width: 20%;
-    height: 80px;
-    padding: 10px 10px;
-    border: 1px solid black;
+    width: 100%;
+    padding: 0;
+    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px auto;
+    
 }
 
 .btn-contador{
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
+    margin: 0;
     background-color: white;
-    outline: none;
-    border: 1px solid rgb(196, 196, 196);
     font-family:Arial;
 	font-size:17px;
-	padding:0;
+	padding:auto;
 	text-decoration:none;
+    outline: none;
+    border: 1px solid rgb(196, 196, 196);
+}
+
+.izquierdo{
+    border-radius: 8px 0 0 8px;
+}
+.derecho{
+    border-radius: 0 8px 8px 0;
 }
 
 .btn-contador:hover{
@@ -27,9 +34,16 @@
 
 .text-contador{
     margin: 0;
+    width: 40%;
+    height: 50px;
+    padding: 0 10px;
+    font-size: 15px;
+    color: rgb(75, 75, 75);
+    background-color: white;
+    border-top: 1px solid rgb(196, 196, 196);
+    border-bottom: 1px solid rgb(196, 196, 196);
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 60%;
-    height: 30px;
+    
 }

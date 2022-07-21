@@ -18,11 +18,11 @@ const Contador = () => {
 
   return (
     <div className="contador-container">
-        <button className="btn-contador" onClick={limiteInicial}>-</button>
+        <button className="btn-contador izquierdo" onClick={limiteInicial}>-</button>
 
         <p className="text-contador" >Cantidad: {contador}</p>
     
-        <button className="btn-contador" onClick={limiteStock}>+</button>
+        <button className="btn-contador derecho" onClick={limiteStock}>+</button>
     </div>
   )
 };

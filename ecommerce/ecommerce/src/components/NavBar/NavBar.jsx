@@ -1,5 +1,5 @@
+import {Link, NavLink} from 'react-router-dom';
 import './NavBar.css'
-
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
@@ -8,11 +8,16 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import ModalCarrito from '../Modal/ModalCarrito';
 
+
 const NavBar = () => {
   return (
     <Navbar bg="dark" expand="lg" variant='dark'>
       <Container fluid>
-        <Navbar.Brand href="#">Juguetes 3D</Navbar.Brand>
+        <Link className='text-title' to='/'>
+          <Navbar.Brand>Juguetes 3D</Navbar.Brand>
+        
+        </Link>
+
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -20,9 +25,12 @@ const NavBar = () => {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#action1">Flexibles</Nav.Link>
-            <Nav.Link href="#action2">Rompecabezas</Nav.Link>
-            <Nav.Link href="#action3">Encastrables</Nav.Link>
+            <NavLink className='text-link' to="/categoria/flexible"><Nav.Link href="#action1">Flexibles  |</Nav.Link></NavLink>
+            <NavLink className='text-link' to="/categoria/rompecabeza"><Nav.Link href="#action1">Rompecabezas  |</Nav.Link></NavLink>
+            <NavLink className='text-link' to="/categoria/encastrable"><Nav.Link href="#action1">Encastrables  |</Nav.Link></NavLink>
+            
+            
+            
             <NavDropdown title="Link" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action4">

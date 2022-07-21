@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Contador from './components/contador/Contador';
 import ItemListContainer from './components/itemListContainer/ItemListContainer';
+import ItemDetail from './components/ItemDetail/ItemDetail';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <NavBar/>
         <ItemListContainer/>
         <Contador/>
+        <ItemDetail/>
       
       </div>
     </BrowserRouter>

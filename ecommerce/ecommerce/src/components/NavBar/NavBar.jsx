@@ -12,7 +12,7 @@ const NavBar = () => {
   return (
     <Navbar bg="dark" expand="lg" variant='dark'>
       <Container fluid>
-        <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
+        <Navbar.Brand href="#">Juguetes 3D</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -20,8 +20,9 @@ const NavBar = () => {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#action1">Home</Nav.Link>
-            <Nav.Link href="#action2">Link</Nav.Link>
+            <Nav.Link href="#action1">Flexibles</Nav.Link>
+            <Nav.Link href="#action2">Rompecabezas</Nav.Link>
+            <Nav.Link href="#action3">Encastrables</Nav.Link>
             <NavDropdown title="Link" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action4">
@@ -37,7 +38,7 @@ const NavBar = () => {
             </Nav.Link>
             <ModalCarrito/>
           </Nav>
-          <Form className="d-flex">
+          {/* <Form className="d-flex">
             <Form.Control
               type="search"
               placeholder="Search"
@@ -45,7 +46,7 @@ const NavBar = () => {
               aria-label="Search"
             />
             <Button variant="primary">Search</Button>
-          </Form>
+          </Form> */}
         </Navbar.Collapse>
       </Container>
     </Navbar>

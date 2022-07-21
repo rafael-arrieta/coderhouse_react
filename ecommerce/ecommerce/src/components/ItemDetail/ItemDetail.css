@@ -1,0 +1,28 @@
+.container-detail{
+    width: 90%;
+    height: 50vh;
+    border: 1px solid rgb(158, 158, 158);
+    margin: 10px auto;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-image{
+    width: 40%;
+    height: 100%;
+    margin:0;
+    padding:10px 10px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.container-description{
+    width: 60%;
+    height: 100%;
+    margin:0;
+    padding:10px 10px;
+    display:flex;
+    justify-content: center;
+}

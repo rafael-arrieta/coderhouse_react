@@ -26,7 +26,9 @@ const ItemListContainer = ({cargando}) => {
             
             { loading ? <h1>Cargando...</h1>
                 :
-                productos?.map (prod => <CardItem nombre={prod.nombre} precio = {prod.precio}imagen={prod.imagen}/>) }   
+                productos?.map (prod => 
+                    <CardItem nombre={prod.nombre} precio = {prod.precio} categoria={prod.categoria}/>)
+            }
         </div>
     )
 }

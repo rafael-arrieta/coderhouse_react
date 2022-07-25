@@ -43,7 +43,7 @@ const NavBar = () => {
             <Nav.Link href="#" disabled>
               
             </Nav.Link>
-            <ModalCarrito/>
+            
           </Nav>
           {/* <Form className="d-flex">
             <Form.Control
@@ -54,7 +54,9 @@ const NavBar = () => {
             />
             <Button variant="primary">Search</Button>
           </Form> */}
+          <ModalCarrito/>
         </Navbar.Collapse>
+        
       </Container>
     </Navbar>
   )

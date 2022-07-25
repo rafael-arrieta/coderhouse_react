@@ -18,7 +18,7 @@ function ModalCarrito() {
     <>
       {values.map((v, idx) => (
         <Button key={idx} className="primary" onClick={() => handleShow(v)}>
-          modal {cantidad}
+          Cart
         </Button>
       ))}
       <Modal show={show} fullscreen={fullscreen} onHide={() => setShow(false)}>

@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemListContainer from './components/itemListContainer/ItemListContainer';
-import ItemDetail from './components/ItemDetail/ItemDetail';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
         <Routes>
           <Route index path='/' element={<ItemListContainer/>}/>
           <Route index path='/categoria/:categoriaId' element={<ItemListContainer/>}/>
-          <Route path='/detalle/:detalleId' element={<ItemDetail/>}/>
+          <Route path='/detalle/:detalleId' element={<ItemDetailContainer/>}/>
           <Route path='*' element={<Navigate to='/'/>}/>
         </Routes>
       </div>

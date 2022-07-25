@@ -2,8 +2,9 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getFetch } from '../../database/getFetch';
-import CardItem from '../cardItem/CardItem';
-import './ItemListContainer.css'
+import ItemList from '../ItemList/ItemList';
+
+
 
 const ItemListContainer = ({cargando}) => {
     const [productos, setProductos] = useState ([])
@@ -29,9 +30,8 @@ const ItemListContainer = ({cargando}) => {
             {cargando}
             { loading ? <h1>Cargando...</h1>
                 :
-                productos?.map((prod) => 
-                    <CardItem nombre={prod.nombre} precio = {prod.precio} categoria={prod.categoria} imagen={prod.imagen}
-                    id={prod.id} stock={prod.stock} />)
+                <ItemList productos={productos}/>
+                
             }
 
             

@@ -1,4 +1,13 @@
-.contador-container{
+
+.ItemCount-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.ItemCount-buttons{
     width: 100%;
     padding: 0;
     margin: 0;
@@ -32,7 +41,7 @@
     background-color: rgb(240, 240, 240);
 }
 
-.text-contador{
+.text-ItemCount{
     margin: 0;
     width: 40%;
     height: 50px;
@@ -45,5 +54,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
+}
+
+.btn-agregar{
+    width: 100px;
+    height: 50px;
+    margin: 15px 0 ;
+    background-color: rgb(27, 84, 255);
+    font-family:Arial;
+    color: rgb(255, 255, 255);
+	font-size:15px;
+	padding:auto;
+	text-decoration:none;
+    outline: none;
+    border: 1px solid rgb(196, 196, 196);
+    border-radius: 8px;
 }

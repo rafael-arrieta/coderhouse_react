@@ -33,8 +33,6 @@ const ItemListContainer = ({cargando}) => {
                 <ItemList productos={productos}/>
                 
             }
-
-            
         </div>
     )
 }

@@ -5,14 +5,14 @@ const ItemCount = ({intial, stock, onAdd}) => {
   const [count, setCount] = useState(intial);
   const [disponibles, setDisponibles] = useState(stock-1);
   
-  function itemSuma(){
+ const itemSuma =()=>{
     if(count < stock){
       setCount(count+1)
       setDisponibles(disponibles-1)
     }
   }
 
-  function itemResta(){
+  const itemResta =()=>{
     if (count > intial){
       setCount(count-1)
       setDisponibles(disponibles+1)

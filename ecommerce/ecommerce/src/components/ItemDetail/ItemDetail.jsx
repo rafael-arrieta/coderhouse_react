@@ -1,13 +1,19 @@
 import ItemCount from '../ItemCount/ItemCount';
+import { useState } from 'react';
 import './ItemDetail.css'
+import MiBtn from '../MiBtn/MiBtn';
+import {Link} from 'react-router-dom'
 
 
 const ItemDetail = ({producto}) => {
-
+  const [mostrarCount, setMostrarCount] = useState(true)
   const onAdd = (cant) => {
+    setMostrarCount()
     console.log(`la cantidad es ${cant}`);
     return
-  } 
+  }
+
+  
   
   return (
     <div className="container-detail">
@@ -18,7 +24,13 @@ const ItemDetail = ({producto}) => {
             <h3 className="h3-detail">Precio unitario: ${producto.precio}</h3>
             <p>Stock: {producto.stock} unidades</p>
             <div className="container-compra">
-                <ItemCount intial={1} stock={producto.stock} onAdd={onAdd}/>
+                {mostrarCount?
+                  <ItemCount intial={1} stock={producto.stock} onAdd={onAdd}/>
+                  :
+                  <Link to="/cart"><MiBtn contenido={'To Cart'}/></Link>
+                }
+
+                
             </div>
         </div>
     </div>

@@ -8,7 +8,7 @@ let productos = [
     {id:'07', categoria:'flexible', nombre: 'Hormiga', precio: '550',stock: 12, imagen: '/productos/07_hormiga.png'},
     {id:'08', categoria:'flexible', nombre: 'Escorpion', precio: '450',stock: 12, imagen: '/productos/08_escorpion.png'},
     {id:'10', categoria:'flexible', nombre: 'Pez', precio: '500',stock: 16, imagen: '/productos/10_pez.png'},
-    {id:'11', categoria:'flexible', nombre: 'Estrella de mar', precio: '350',stock: 25, imagen: '/productos/11_estrella.png'},
+    {id:'11', categoria:'flexible', nombre:               'Estrella de mar', precio: '350',stock: 25, imagen: '/productos/11_estrella.png'},
     {id:'12', categoria:'rompecabeza', nombre: 'Tiranosaurio Rex', precio: '400',stock: 28, imagen: '/productos/12_tiranosaurio.png'},
     {id:'13', categoria:'rompecabeza', nombre: 'Cuello Largo', precio: '400',stock: 19, imagen: '/productos/13_cuellolargo.png'},
     {id:'14', categoria:'rompecabeza', nombre: 'Terodactilo', precio: '400',stock: 13, imagen: '/productos/14_terodactilo.png'},

@@ -9,19 +9,33 @@ const CartContextProvider = ({children})=>{
     const [cartList, setCartList] = useState([])
 
     const addToCart = (prod)=>{
-        setCartList([
-            ...cartList, 
-            prod
-        ])
+        if (cartList.find(item => item.id===prod.id)){
+            for (const item in cartList){
+                if (cartList[item].id==prod.id){
+                cartList[item].cantidad+=prod.cantidad
+            }}
+        }else{ setCartList([...cartList,prod])}
     }
+
+    const clearCart = (prod)=> {
+        setCartList([])
+    }
+
+    // const removeToCart = (prod)=>{
+    //     for
+    // }
+
     return(
         <CartContext.Provider value = {{
             cartList,
-            addToCart
+            addToCart,
+            clearCart
         }}>
             {children}
         </CartContext.Provider>
     )
 }
-
+//removeToCart
+//clearCart
+// isInCart()
 export default CartContextProvider

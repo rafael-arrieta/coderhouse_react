@@ -13,8 +13,8 @@ const ItemDetail = ({producto}) => {
   
   const onAdd = (cant) => {
     setMostrarCount();
-    addToCart({producto, cantidad: cant});
-    console.log('la cantidad es' +cant);
+    addToCart({...producto, cantidad: cant});
+    console.log('la cantidad es ' +cant);
   }
 
   console.log(cartList);

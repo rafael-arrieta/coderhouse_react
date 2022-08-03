@@ -1,19 +1,23 @@
+import './ItemDetail.css';
 import ItemCount from '../ItemCount/ItemCount';
 import { useState } from 'react';
-import './ItemDetail.css'
+import { useCartContext } from "../../Context/CartContext";
 import MiBtn from '../MiBtn/MiBtn';
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
 
 
 const ItemDetail = ({producto}) => {
+
+  const {addToCart, cartList}=useCartContext()
   const [mostrarCount, setMostrarCount] = useState(true)
+  
   const onAdd = (cant) => {
-    setMostrarCount()
-    console.log(`la cantidad es ${cant}`);
-    return
+    setMostrarCount();
+    addToCart({producto, cantidad: cant});
+    console.log('la cantidad es' +cant);
   }
 
-  
+  console.log(cartList);
   
   return (
     <div className="container-detail">

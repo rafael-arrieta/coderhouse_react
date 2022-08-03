@@ -22,7 +22,7 @@ const ItemCount = ({intial, stock, onAdd}) => {
   const AddItemToCart = ()=> {
     onAdd(count)
   }
-
+ 
   
   
   return (

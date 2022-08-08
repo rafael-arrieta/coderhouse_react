@@ -8,16 +8,13 @@ import {Link} from 'react-router-dom';
 
 const ItemDetail = ({producto}) => {
 
-  const {addToCart, cartList}=useCartContext()
+  const {addToCart} =useCartContext()
   const [mostrarCount, setMostrarCount] = useState(true)
   
   const onAdd = (cant) => {
     setMostrarCount();
     addToCart({...producto, cantidad: cant});
-    console.log('la cantidad es ' +cant);
   }
-
-  console.log(cartList);
   
   return (
     <div className="container-detail">
@@ -31,10 +28,11 @@ const ItemDetail = ({producto}) => {
                 {mostrarCount?
                   <ItemCount intial={1} stock={producto.stock} onAdd={onAdd}/>
                   :
-                  <Link to="/cart"><MiBtn contenido={'To Cart'}/></Link>
+                  <>
+                    <Link to="/cart"><MiBtn contenido={'Terminar Compra'}/></Link>
+                    <Link to="/"><MiBtn contenido={'Seguir comprando'}/></Link>
+                  </>
                 }
-
-                
             </div>
         </div>
     </div>

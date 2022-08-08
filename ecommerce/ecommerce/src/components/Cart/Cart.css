@@ -1,0 +1,133 @@
+.cart-container{
+    width: 100%;
+    height: 92vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    background-color: rgb(240, 240, 240);
+}
+.cart-titulo{
+    font-size: 3rem;
+    font-weight: 900;
+    padding: 0;
+    margin: 0;
+    color: white;
+    -webkit-text-stroke: 0.1rem black;
+
+}
+
+
+.cart-lista{
+    
+    padding: 1em;
+    width: 65%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.cart-head{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1em;
+
+}
+.cart-table{
+    width: 80%;
+    height: 3em;
+    background-color: white;
+    border: 1px solid rgb(230, 230, 230);
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    
+}
+
+.elemento-lista-1{
+    width: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.elemento-lista-2{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.elemento-lista-3{
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-foot{
+    width: 80%;
+    background-color: white;
+    border: 1px solid rgb(230, 230, 230);
+    padding: 0.7em;
+    display: flex;
+    gap: 1em;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-buttons{
+    height: 50%;
+    display: flex;
+    gap: 0.5em;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-form{
+    background-color: skyblue;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.text-cart{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: rgb(51, 51, 51);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.eliminar-item{
+    margin: 0;
+    width: 1.4em;
+    height: 1.4em;
+    border-radius: 0.7em;
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.9);
+    background-color: rgba(255, 0, 0, 0.8);
+    color: whitesmoke;
+    font-size: 1.4em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.eliminar-item:hover{
+    background-color: red;
+    -webkit-text-stroke: 1px black;
+    outline: 1px solid rgb(0, 0, 0);
+
+}

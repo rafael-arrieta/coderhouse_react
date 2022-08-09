@@ -30,7 +30,7 @@ const Cart = () => {
                   <div className="cart-table" key={item.id}>
                     <div className="elemento-lista-1">{item.nombre}- {item.categoria}</div>
                     <div className="elemento-lista-1">Precio Unit: $ {item.precio} x {item.cantidad} </div>
-                    <div className="elemento-lista-2">Total = $ {item.precio*item.cantidad}</div>
+                    <div className="elemento-lista-2">Subtotal = $ {item.precio*item.cantidad}</div>
                     <div className="elemento-lista-3">
                         <button className="eliminar-item"onClick={ () => removeToCart(item.id)}>X</button>
                     </div>

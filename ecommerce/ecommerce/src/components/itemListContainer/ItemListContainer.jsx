@@ -10,31 +10,12 @@ import ItemList from '../ItemList/ItemList';
 const ItemListContainer = ({cargando}) => {
     const [productos, setProductos] = useState ([])
     const [loading, setLoading] = useState (true)
-    
-    
-    //const [producto, setProducto] = useState ({})
-    // useEffect (() =>{
-    //     const db = getFirestore()
-    //     const queryProducto = doc(db,'items','3ud9ITpOi7zbHitYyJz6')
-    //     getDoc(queryProducto)
-    //     .then(resp => setProducto ( {id: resp.id, ...resp.data() } ) )
-    // },[])
-
-    // useEffect (() =>{
-    //     const db = getFirestore()
-    //     const queryCollection = collection(db, 'items')
-    //     getDocs(queryCollection)
-    //     .then(resp => setProductos(resp.docs.map(prod => ({id: prod.id, ...prod.data()} )) ) )
-    //     .catch(err => console.log(err))
-    //     .finally(() => setLoading(false)) 
-    // },[])
-
     const {categoriaId} = useParams()
     
     useEffect (() =>{
+        const db = getFirestore()
+        const queryCollection = collection(db, 'items')
         if(categoriaId){
-            const db = getFirestore()
-            const queryCollection = collection(db, 'items')
             const queryFiltrada = query(
                 queryCollection, 
                 where('categoria','==',categoriaId)
@@ -44,9 +25,7 @@ const ItemListContainer = ({cargando}) => {
             .catch(err => console.log(err))
             .finally(() => setLoading(false))
         
-        } else {
-            const db = getFirestore()
-            const queryCollection = collection(db, 'items')
+        } else {            
             getDocs(queryCollection)
             .then(resp => setProductos(resp.docs.map(prod => ({id: prod.id, ...prod.data()} )) ) )
             .catch(err => console.log(err))
@@ -54,20 +33,7 @@ const ItemListContainer = ({cargando}) => {
         }
         },[categoriaId])
 
-    // const {categoriaId} = useParams()
-    // useEffect (() =>{
-    //     if (categoriaId) {
-    //         getFetch()
-    //         .then(respuesta => setProductos(respuesta.filter(prod=>prod.categoria==categoriaId)))
-    //         .catch(err => console.log(err))
-    //         .finally(() => setLoading(false)) 
-    //     } else {
-    //         getFetch()
-    //         .then(respuesta => setProductos(respuesta))
-    //         .catch(err => console.log(err))
-    //         .finally(() => setLoading(false)) 
-    //     }
-    // }, [categoriaId])
+
 
     return (
         <>

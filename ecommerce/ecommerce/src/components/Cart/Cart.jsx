@@ -1,24 +1,51 @@
 import { useCartContext } from "../../Context/CartContext"
 import MiBtn from "../MiBtn/MiBtn"
 import {Link} from 'react-router-dom';
+import{addDoc, collection, doc, documentId, getDocs, getFirestore, query, updateDoc, where, writeBatch} from 'firebase/firestore'
 import './Cart.css'
 
 const Cart = () => {
   const {cartList,clearCart,removeToCart, precioTotal}= useCartContext()
 
-  // const terminarCompra = ()=>{
-  //   let cartObj = 
-  //     cartList.map(item =>({producto: item.nombre,
-  //       precio: item.precio,
-  //       cantidad: item.cant
-  //     }))
+  const finishBuying = async(e) =>{
+    e.preventDefault();
+    
+    const order = {}
+    //order.buyer=
+    order.items = cartList.map(prod => {
+      return {
+        product: prod.nombre,
+        id: prod.id,
+        price: prod.precio
+      }
+    })
+    order.total = precioTotal()
 
-  //   let usuario = {
-  //     nombre_usuario: 'juan perez',
-  //     precio_total: precioTotal()
-  //   }
+    const db = getFirestore();
+    const queryOrders = collection(db, 'orders')
+    addDoc(queryOrders, order)
+    .then (resp => alert('Gracias por tu compra!!\n'+'se envió un email con el detalle y el ID de tu compra: \n' + resp.id));
+    // const queryUpdateDoc = doc (db, 'items', )
+    // updateDoc(queryUpdateDoc, 'stock')
 
-  // }
+    const queryCollectionStock = collection(db, 'items')
+
+    const queryActualizarStock = query(
+      queryCollectionStock,
+      where( documentId() , 'in', cartList.map(it => it.id))
+    )
+
+    const batch = writeBatch(db)
+
+    await getDocs(queryActualizarStock)
+    .then(resp => resp.docs.forEach(res => batch.update(res.ref, {
+      stock: res.data().stock - cartList.find(item=> item.id === res.id).cantidad
+    })))
+    .catch(err=> console.log(err))
+    .finally(()=>clearCart())
+
+    batch.commit()
+  }
 
   return (
     <div className="cart-container">
@@ -63,10 +90,21 @@ const Cart = () => {
       </div>
 
       <div className="cart-form">
-        <div className="cart-head">
-          <p>FORMULARIO</p>
-          <input type="submit" value="Enviar"/>
-          </div>
+        <div className="cart-form-head">
+          <h4>FORMULARIO</h4>
+        </div>
+        
+          <div className="cart-form-box">
+            <form className="form-display" onSubmit={finishBuying}> 
+              <p className="text-form">Name:</p>
+              <input className="input-form" type="text" />
+              <p className="text-form">Phone</p>
+              <input className="input-form" type="Phone" />
+              <p className="text-form">Email:</p>
+              <input className="input-form" type="Email" />
+              <input className="button-form" type="submit" value="Enviar"/>
+          </form> 
+        </div>
       </div>
 
     </div>

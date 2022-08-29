@@ -14,6 +14,8 @@ const Cart = () => {
 		phone:'',
 		rEmail:''
 	})
+	
+	const errorMessage = validateData(priceTotal(), formData.name, formData.phone, formData.email, formData.rEmail)  //(total,name,phone,email,rEmail)
 
 	const finishBuying = async (e) => {
 		e.preventDefault();
@@ -36,36 +38,30 @@ const Cart = () => {
 			addDoc(queryOrders, order)
 				.then((resp) =>setId(resp.id))
 
-
 		const queryCollectionStock = collection(db, "items");
 
 		const queryRefreshStock = query(
 			queryCollectionStock,
-				where(
-					documentId(),
-					"in",
-					cartList.map((it) => it.id)
-				)
-				);
+			where(documentId(),"in",cartList.map((it) => it.id)
+			));
 
 		const batch = writeBatch(db);
 
 		await getDocs(queryRefreshStock)
-		.then((resp) => resp.docs.forEach((res) =>
-			batch.update(res.ref, {stock: res.data().stock - cartList.find((item) => item.id === res.id).quantity})
+			.then((resp) => resp.docs.forEach((res) =>
+				batch.update(res.ref, {stock: res.data().stock - cartList.find((item) => item.id === res.id).quantity})
+				)
 			)
-		)
-		.catch((err) => console.log(err))
-		.finally(() => {
-			clearCart()
-			setFormData({
-				email:'',
-				name:'',
-				phone:'',
-				rEmail:''
-			})
+			.catch((err) => console.log(err))
+			.finally(() => {
+				clearCart()
+				setFormData({
+					email:'',
+					name:'',
+					phone:'',
+					rEmail:''
+				})
 			});
-
 		batch.commit();
 	};
 
@@ -75,7 +71,8 @@ const Cart = () => {
 			[e.target.name]:e.target.value
 		})
 	}
-	console.log(formData);
+	
+
 	return (
 		<div className="cart-container">
 			{id.length > 0 ? <p className="text-cart">El ID de tu compra es: {id}</p>
@@ -146,13 +143,22 @@ const Cart = () => {
 					<input className="input-form" name="email"type="Email" onChange={handleChange} value={formData.email}/>
 					<p className="text-form">Confirmar email:</p>
 					<input className="input-form" name="rEmail"type="Email" onChange={handleChange} value={formData.rEmail}/>
+					<p>{errorMessage}</p>
+					<input className="button-form" disabled={errorMessage} type="submit" value="Enviar" />
 
-					<input className="button-form" type="submit" value="Enviar" />
 				</form>
 				</div>
 			</div>
 		</div>
 	);
 	};
+
+	const validateData = (total,name,phone,email,rEmail) => {
+		if (total === 0 || name ===''|| phone ==='' || email ==='' || rEmail ==='') return '-'
+		if (name.length < 4) return 'ingresá un nombre correcto'
+		if (phone.length < 10) return 'ingresá un teléfono válido'
+		if(!email.includes('@')||!email.includes('.com') ) return 'email incorrecto'
+		if (email !== rEmail) return 'confirmar mail correctamente'
+	}
 
 	export default Cart;

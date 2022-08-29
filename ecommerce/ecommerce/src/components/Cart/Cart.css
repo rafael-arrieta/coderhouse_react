@@ -130,7 +130,7 @@
 
 .cart-form-head{
     width: 100%;
-    height: 20%;
+    height: 15%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -139,7 +139,8 @@
     width: 70%;
     height: auto;
     border-radius: 1em;
-    background-color: skyblue;
+    background-color: rgb(199, 232, 245);
+    border: 1px solid rgb(51, 51, 51);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -149,7 +150,7 @@
 .form-display{
     width: 100%;
     height: 100%;
-    padding: 2em 0 ;
+    padding: 1em 0 ;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -158,7 +159,7 @@
 
 .text-form{
     margin: 0;
-    padding: 12px;
+    padding: 8px;
     color: rgb(51, 51, 51);
     font-weight: bold;
 }
@@ -167,29 +168,36 @@
     margin-bottom: 7px;
     padding: 5px;
     border-radius: 5px;
-    border: 1px solid rgb(51, 51, 51);
+    border: 1px solid rgb(104, 104, 104);
 }
 
 .input-form:focus{
     background-color: rgba(234, 255, 191, 0.6);
     outline: none;
-    border: 3px solid rgb(64, 166, 255);
-    padding: 3px;
+    border: 1px solid rgb(64, 166, 255);
 }
 
 .input-form:active{
     background-color: rgba(138, 159, 255, 0.6);
-    border: 3px solid rgb(189, 53, 216);
+    border: 1px solid rgb(189, 53, 216);
 }
+
 
 .button-form{
     margin: 0;
     margin-top: 10px;
     margin-bottom: 20px;
-    background-color: rebeccapurple;
+    border-radius: 5px;
+    background-color: rgb(0, 87, 218);
+    color: azure;
+    border: none;
     padding: 10px 20px;
 }
 
 .button-form:hover{
-    background-color: rgba(153, 0, 255, 0.3);
+    background-color: rgb(0, 65, 163);
+}
+
+.button-form:disabled{
+    background-color: rgba(0, 87, 218, 0.2);
 }

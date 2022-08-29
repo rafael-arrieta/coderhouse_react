@@ -4,10 +4,10 @@ import { useParams } from 'react-router-dom'
 
 import ItemDetail from '../ItemDetail/ItemDetail';
 
-const ItemDetailContainer = ({cargando}) => {
-  const [producto, setProducto] = useState ({})
+const ItemDetailContainer = ({load}) => {
+  const [product, setProduct] = useState ({})
   const [loading, setLoading] = useState (true)
-  const {detalleId}= useParams()
+  const {detailId}= useParams()
 
     // useEffect (() =>{
     //         getFetch(detalleId)
@@ -17,20 +17,20 @@ const ItemDetailContainer = ({cargando}) => {
 
     useEffect (() =>{
         const db = getFirestore()
-        const queryProducto = doc(db,'items',detalleId)
-        getDoc(queryProducto)
-        .then(resp => setProducto ( {id: resp.id, ...resp.data() } ) )
+        const queryProduct = doc(db,'items',detailId)
+        getDoc(queryProduct)
+        .then(resp => setProduct ( {id: resp.id, ...resp.data() } ) )
         .catch(err => console.log(err))
         .finally(() => setLoading(false)) 
-    },[detalleId])
+    },[detailId])
 
 
   return (
     <>
-      {cargando}
+      {load}
             {loading ? <h1>Cargando...</h1>
                 :
-                <ItemDetail producto={producto}/>  
+                <ItemDetail product={product}/>  
             }
 
     </>

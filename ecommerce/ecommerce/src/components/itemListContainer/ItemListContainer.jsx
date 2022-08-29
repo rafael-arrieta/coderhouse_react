@@ -7,40 +7,40 @@ import ItemList from '../ItemList/ItemList';
 
 
 
-const ItemListContainer = ({cargando}) => {
-    const [productos, setProductos] = useState ([])
+const ItemListContainer = ({load}) => {
+    const [products, setProducts] = useState ([])
     const [loading, setLoading] = useState (true)
-    const {categoriaId} = useParams()
+    const {categoryId} = useParams()
     
     useEffect (() =>{
         const db = getFirestore()
         const queryCollection = collection(db, 'items')
-        if(categoriaId){
-            const queryFiltrada = query(
+        if(categoryId){
+            const queryFiltered = query(
                 queryCollection, 
-                where('categoria','==',categoriaId)
+                where('category','==',categoryId)
                 )
-            getDocs(queryFiltrada)
-            .then(resp => setProductos(resp.docs.map(prod => ({id: prod.id, ...prod.data()} )) ) )
+            getDocs(queryFiltered)
+            .then(resp => setProducts(resp.docs.map(prod => ({id: prod.id, ...prod.data()} )) ) )
             .catch(err => console.log(err))
             .finally(() => setLoading(false))
         
         } else {            
             getDocs(queryCollection)
-            .then(resp => setProductos(resp.docs.map(prod => ({id: prod.id, ...prod.data()} )) ) )
+            .then(resp => setProducts(resp.docs.map(prod => ({id: prod.id, ...prod.data()} )) ) )
             .catch(err => console.log(err))
             .finally(() => setLoading(false))
         }
-        },[categoriaId])
+        },[categoryId])
 
 
 
     return (
         <>
-            {cargando}
+            {load}
             { loading ? <h1>Cargando...</h1>
                 :
-                <ItemList productos={productos}/>
+                <ItemList products={products}/>
             }
         </>
     )

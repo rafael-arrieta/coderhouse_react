@@ -1,42 +1,46 @@
-import './ItemDetail.css';
-import ItemCount from '../ItemCount/ItemCount';
-import { useState } from 'react';
+import "./ItemDetail.css";
+import ItemCount from "../ItemCount/ItemCount";
+import { useState } from "react";
 import { useCartContext } from "../../Context/CartContext";
-import MiBtn from '../MiBtn/MiBtn';
-import {Link} from 'react-router-dom';
+import Mybtn from "../Mybtn/Mybtn";
+import { Link } from "react-router-dom";
 
+const ItemDetail = ({ product }) => {
+  const { addToCart } = useCartContext();
+  const [showCount, setShowCount] = useState(true);
 
-const ItemDetail = ({producto}) => {
+  const onAdd = (quant) => {
+    setShowCount();
+    addToCart({ ...product, quantity: quant });
+  };
 
-  const {addToCart} =useCartContext()
-  const [mostrarCount, setMostrarCount] = useState(true)
-  
-  const onAdd = (cant) => {
-    setMostrarCount();
-    addToCart({...producto, cantidad: cant});
-  }
-  
   return (
     <div className="container-detail">
-        <img className="container-image"src={producto.imagen} alt=''/>
-        <div className="container-description">
-            <h1 className="h1-detail">{producto.nombre}</h1>
-            <h2 className="h2-detail">Descripcion del producto: Juguete {producto.categoria}</h2>
-            <h3 className="h3-detail">Precio unitario: ${producto.precio}</h3>
-            <p>Stock: {producto.stock} unidades</p>
-            <div className="container-compra">
-                {mostrarCount?
-                  <ItemCount intial={1} stock={producto.stock} onAdd={onAdd}/>
-                  :
-                  <>
-                    <Link to="/cart"><MiBtn contenido={'Terminar Compra'}/></Link>
-                    <Link to="/"><MiBtn contenido={'Seguir comprando'}/></Link>
-                  </>
-                }
-            </div>
+      <img className="container-image" src={product.image} alt="" />
+      <div className="container-description">
+        <h1 className="h1-detail">{product.name}</h1>
+        <h2 className="h2-detail">
+          Descripcion del producto: Juguete {product.category}
+        </h2>
+        <h3 className="h3-detail">price unitario: ${product.price}</h3>
+        <p>Stock: {product.stock} unidades</p>
+        <div className="container-compra">
+          {showCount ? (
+            <ItemCount intial={1} stock={product.stock} onAdd={onAdd} />
+          ) : (
+            <>
+              <Link to="/cart">
+                <Mybtn content={"Terminar Compra"} />
+              </Link>
+              <Link to="/">
+                <Mybtn content={"Seguir comprando"} />
+              </Link>
+            </>
+          )}
         </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default ItemDetail
+export default ItemDetail;

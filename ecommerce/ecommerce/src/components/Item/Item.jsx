@@ -1,20 +1,19 @@
-import MiBtn from "../MiBtn/MiBtn";
-import './Item.css'
-import {Link} from 'react-router-dom'
+import Mybtn from "../Mybtn/Mybtn";
+import "./Item.css";
+import { Link } from "react-router-dom";
 
-const CardItem = ({prod}) => {
-
+const CardItem = ({ prod }) => {
   return (
     <div className="card-item">
-        <img className="card-image" src={prod.imagen} alt=''/>
-        <div className="card-descript">
-          <h1 className="h1-card"> {prod.nombre}</h1>
-          <h3 className="h3-card">Juguete: {prod.categoria}</h3>
-          <h2 className="h2-card">$ {prod.precio}</h2>
-          <Link to={`/detalle/${prod.id}`}>
-            <MiBtn contenido="detalle"/>
-          </Link>
-        </div>
+      <img className="card-image" src={prod.image} alt="" />
+      <div className="card-descript">
+        <h1 className="h1-card"> {prod.name}</h1>
+        <h3 className="h3-card">Juguete: {prod.category}</h3>
+        <h2 className="h2-card">$ {prod.price}</h2>
+        <Link to={`/detail/${prod.id}`}>
+          <Mybtn content="detalle" />
+        </Link>
+      </div>
     </div>
   );
 };

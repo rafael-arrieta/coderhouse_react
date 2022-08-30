@@ -2,6 +2,8 @@ import Mybtn from "../Mybtn/Mybtn";
 import "./Item.css";
 import { Link } from "react-router-dom";
 
+//This componente contains the card of each item and receives properties from the mapping parameters
+
 const CardItem = ({ prod }) => {
   return (
     <div className="card-item">

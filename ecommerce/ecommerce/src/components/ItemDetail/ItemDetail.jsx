@@ -9,6 +9,7 @@ const ItemDetail = ({ product }) => {
   const { addToCart } = useCartContext();
   const [showCount, setShowCount] = useState(true);
 
+  // This function is the call to two functions 
   const onAdd = (quant) => {
     setShowCount();
     addToCart({ ...product, quantity: quant });

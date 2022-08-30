@@ -1,5 +1,6 @@
 import "./Mybtn.css";
 
+// Standard button used in the components
 const Mybtn = (props) => {
   return (
     <div>
